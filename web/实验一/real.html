@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生信息提交页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            background-color: #6f98ef;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* 设置相对定位 */
+        }
+        #header img {
+            position: absolute; /* 设置绝对定位 */
+            top: 20px; /* 距离顶部的距离 */
+            right: 20px; /* 距离右边的距离 */
+        }
+        #container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 20px auto;
+        }
+        #info {
+            width: 45%; /* 调整信息部分的宽度 */
+        }
+        #form {
+            width: 45%; /* 调整表单部分的宽度 */
+            margin-left: 5%; /* 将表单部分向右移动5% */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eaa7a7;
+        }
+        th {
+            background-color: #dbf57c;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100px ; /* 设置图像最大宽度为原始大小的30% */
+            height: 100px; /* 保持宽高比 */
+        }
+    </style>
+
+</head>
+<body>
+<div id="header">
+    <h1>学生信息提交页面</h1>
+    <img src="./logo.jpg" alt="学校Logo">
+</div>
+<div id="container">
+    <div id="info">
+        <h2>学院各个专业介绍</h2>
+        <table>
+            <tr>
+                <th>专业</th>
+                <th>介绍</th>
+            </tr>
+            <tr>
+                <td>通信</td>
+                <td>通信专业是一门研究通信原理、通信系统、通信网络等相关知识的学科。学生在通信专业学习期间，将深入了解数字通信、无线通信、光纤通信等领域的理论与技术。通信专业的学生通常会学习数字信号处理、调制解调、网络协议等课程，以及相关的工程实践，为将来从事通信设备研发、通信网络建设和运维等工作做准备。</td>
+            </tr>
+            <tr>
+                <td>信息</td>
+                <td>信息专业是一门关注信息处理与管理的学科。学生在信息专业学习期间，将学习计算机科学、信息技术、数据处理与分析等方面的知识。信息专业的课程涵盖计算机编程、数据库管理、信息系统设计与开发等内容，培养学生具备信息处理、数据分析与管理的能力，为他们未来从事软件开发、数据分析、信息管理等工作做准备。</td>
+            </tr>
+            <tr>
+                <td>测控</td>
+                <td>测控专业是一门涉及测量、控制和自动化技术的学科。学生在测控专业学习期间，将学习传感器技术、自动控制理论、信号处理等方面的知识。测控专业的课程包括模拟电子技术、数字电路设计、控制系统原理等内容，培养学生具备测量、控制、调试和维护自动化系统的能力，为他们未来从事自动化设备研发、生产线优化等工作做准备。</td>
+            </tr>
+            <tr>
+                <td>电子</td>
+                <td>电子专业是一门研究电子器件、电路和系统的学科。学生在电子专业学习期间，将学习模拟电子技术、数字电子技术、电路设计等方面的知识。电子专业的课程包括电子元器件、集成电路设计、电源电路等内容，培养学生具备电子产品设计、制造和维护的能力，为他们未来从事电子产品研发、生产和销售等工作做准备。</td>
+            </tr>
+        </table>
+    </div>
+    <div id="form">
+        <h2>信息填报</h2>
+        <form id="studentForm" action="./hi.php" method="post">
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="phone">电话:</label>
+            <input type="text" id="phone" name="phone" required><br>
+
+            <label for="qq">QQ号:</label>
+            <input type="text" id="qq" name="qq" required><br>
+
+            <label for="major">专业:</label>
+            <select id="major" name="major" required>
+                <option value="">请选择专业</option>
+                <option value="通信">通信</option>
+                <option value="信息">信息</option>
+                <option value="测控">测控</option>
+                <option value="电子">电子</option>
+            </select><br>
+
+            <label>爱好:</label><br>
+            <input type="checkbox" id="hobby1" name="hobby1" value="篮球">
+            <label for="hobby1">篮球</label><br>
+            <input type="checkbox" id="hobby2" name="hobby2" value="足球">
+            <label for="hobby2">足球</label><br>
+            <input type="checkbox" id="hobby3" name="hobby3" value="游泳">
+            <label for="hobby3">游泳</label><br>
+
+            <input type="submit" value="提交">
+        </form>
+    </div>
+</div>
+
+<script>
+    // 监听表单提交事件
+    document.getElementById("studentForm").addEventListener("submit", function(event) {
+        // 阻止表单默认提交行为
+        event.preventDefault();
+
+        window.location.href = "./success.html"; // 替换为您的上传成功页面的URL
+    });
+</script>
+
+</body>
+</html>
